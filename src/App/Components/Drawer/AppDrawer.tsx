@@ -13,9 +13,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import MenuIcon from '@mui/icons-material/Menu';
-import { drawerReducer } from '../../Context/DrawReducer';
 import { AppBar, Drawer, DrawerHeader } from './Styled';
 import { ShopContext } from '../../Context/ShopContext';
+import { drawerReducer } from './DrawReducer';
 
 export const AppDrawer = () => {
   const shopContext = useContext(ShopContext);

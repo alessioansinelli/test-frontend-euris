@@ -7,44 +7,9 @@ import Typography from '@mui/material/Typography';
 import theme from '../Theme/theme';
 import AppDrawer from './Drawer';
 import { InitialContext, ShopContext } from '../Context/ShopContext';
-
-const drawerWidth = 240;
-
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'flex-end',
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-}));
-
-interface AppBarProps extends MuiAppBarProps {
-  open?: boolean;
-}
-
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})<AppBarProps>(({ theme }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(['width', 'margin'], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  variants: [
-    {
-      props: ({ open }) => open,
-      style: {
-        marginLeft: drawerWidth,
-        width: `calc(100% - ${drawerWidth}px)`,
-        transition: theme.transitions.create(['width', 'margin'], {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.enteringScreen,
-        }),
-      },
-    },
-  ],
-}));
+import { DrawerHeader } from './Drawer/Styled';
+import { Store } from './Store/Store';
+import { StoreMain } from './Store/StoreMain';
 
 export const App = () => {
   return (
@@ -55,6 +20,8 @@ export const App = () => {
           <AppDrawer />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <DrawerHeader />
+            <StoreMain />
+
             <Typography sx={{ marginBottom: 2 }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.

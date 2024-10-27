@@ -1,5 +1,3 @@
-import { Context, createContext, useContext } from 'react';
-
 export interface DrawerState {
   open: boolean;
 }
@@ -19,5 +17,3 @@ export const drawerReducer = (
   }
   throw Error('Unknown action.');
 };
-
-// https://react.dev/learn/scaling-up-with-reducer-and-context
