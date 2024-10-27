@@ -11,7 +11,7 @@ export const Store = (props: IProps) => {
   const { storeId } = props;
 
   const { isLoading, data } = useQuery(
-    'shop',
+    `product${storeId}`,
     async () => await fetchStoreProducts(storeId)
   );
 

@@ -56511,7 +56511,7 @@ var _s = $RefreshSig$();
 const Store = (props)=>{
     _s();
     const { storeId } = props;
-    const { isLoading, data } = (0, _reactQuery.useQuery)("shop", async ()=>await (0, _fetchApi.fetchStoreProducts)(storeId));
+    const { isLoading, data } = (0, _reactQuery.useQuery)(`product${storeId}`, async ()=>await (0, _fetchApi.fetchStoreProducts)(storeId));
     if (isLoading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
         variant: "rectangular",
         width: "100%",
