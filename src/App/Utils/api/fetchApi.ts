@@ -9,7 +9,7 @@ export const fetchStores = async () => {
 
 export const fetchStoreProducts = async (storeId: string) => {
   const { data } = await axios.get<IProduct[]>(
-    `/api/stores/${storeId}/products`
+    `${apiBase}/api/stores/${storeId}/products`
   );
   return data;
 };

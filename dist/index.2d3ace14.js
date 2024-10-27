@@ -51672,7 +51672,7 @@ const fetchStores = async ()=>{
     return data;
 };
 const fetchStoreProducts = async (storeId)=>{
-    const { data } = await (0, _axiosDefault.default).get(`/api/stores/${storeId}/products`);
+    const { data } = await (0, _axiosDefault.default).get(`${apiBase}/api/stores/${storeId}/products`);
     return data;
 };
 const fetchStoreProductDetails = async (storeId, productId)=>{
@@ -56512,15 +56512,24 @@ const Store = (props)=>{
     _s();
     const { storeId } = props;
     const { isLoading, data } = (0, _reactQuery.useQuery)("shop", async ()=>await (0, _fetchApi.fetchStoreProducts)(storeId));
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Card), {
-            children: storeId
+    if (isLoading) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Skeleton), {
+        variant: "rectangular",
+        width: "100%",
+        height: "100%"
+    }, void 0, false, {
+        fileName: "src/App/Components/Store/Store.tsx",
+        lineNumber: 20,
+        columnNumber: 7
+    }, undefined);
+    else return data?.map((product)=>{
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _material.Card), {
+            children: product.data.title
         }, void 0, false, {
             fileName: "src/App/Components/Store/Store.tsx",
-            lineNumber: 20,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false);
+            lineNumber: 24,
+            columnNumber: 14
+        }, undefined);
+    });
 };
 _s(Store, "3/UYpjJNObciauUid8uIQ//UcYY=", false, function() {
     return [

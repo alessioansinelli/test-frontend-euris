@@ -1,4 +1,4 @@
-import { Card, makeStyles } from '@mui/material';
+import { Card, makeStyles, Skeleton } from '@mui/material';
 import React from 'react';
 import { useQuery } from 'react-query';
 import { fetchStoreProducts, fetchStores } from '../../Utils/api/fetchApi';
@@ -15,9 +15,13 @@ export const Store = (props: IProps) => {
     async () => await fetchStoreProducts(storeId)
   );
 
-  return (
-    <>
-      <Card>{storeId}</Card>
-    </>
-  );
+  if (isLoading) {
+    return (
+      <Skeleton variant="rectangular" width="100%" height="100%"></Skeleton>
+    );
+  } else {
+    return data?.map((product) => {
+      return <Card>{product.data.title}</Card>;
+    });
+  }
 };
