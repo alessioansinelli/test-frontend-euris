@@ -13,28 +13,5 @@ export const UiLabels = {
           "In questa sezione dell'applicazione è possibile consultare l'elenco dei negozi.",
       },
     },
-    members: {
-      title: 'Elenco iscritti',
-      labels: {
-        search: 'Ricerca',
-        searchSuggestion: 'Ricerca per nome o cognome',
-        searchButton: 'Cerca',
-      },
-      table: {
-        fields: {
-          name: 'NOME',
-          surname: 'COGNOME',
-          alias: 'ALIAS',
-          dateOfBirth: 'DATA DI NASCITA',
-          city: 'CITTÀ',
-        },
-      },
-    },
-    categories: {
-      title: 'Configura categorie associative',
-    },
-    rates: {
-      title: 'Configura Quote Iscrizione',
-    },
   },
 };

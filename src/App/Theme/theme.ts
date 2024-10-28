@@ -18,9 +18,9 @@ const theme = createTheme({
     h2: {
       fontSize: '1.8rem',
     },
-  },
-  components: {
-    MuiButton: {},
+    h3: {
+      fontSize: '1.6rem',
+    },
   },
 });
 
