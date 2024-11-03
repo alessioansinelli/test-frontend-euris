@@ -1,3 +1,5 @@
 # EURIS TEST
 
-This repo is intended to be a showcase for my knowledge of React.
+To setup the environment, run the command "yarn"
+
+To run the demo website on localhost, run the command "yarn dev"
